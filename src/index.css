@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Sunroll';
+  src: url('/Sunroll.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Whitley Pattrycia';
+  src: url('/Whitley Pattrycia.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ShunsineDemo';
+  src: url('/ShunsineDemo.otf');
+}
+
+@font-face {
+  font-family: 'Shanln';
+  src: url('/SHANLN__.TTF') format('truetype');
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background-color: #fdfbf7;
+}
+
+.app-container {
+  width: 100vw;
+  position: relative;
+}
+
+.background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  will-change: transform;
+}
+
+.hero-background {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.foreground-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 33.42vw; /* Pushes the foreground down without collapsing margins */
+}
+
+/* Fix sub-pixel gaps between sliced images */
+.foreground-wrapper > * {
+  margin-top: -1px;
+}
+.foreground-wrapper > *:first-child {
+  margin-top: 0;
+}
+
+.hero-foreground {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.invite-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.canvas-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- EDITABLE TEXT OVERLAYS --- */
+.image-overlay-container {
+  position: relative;
+  width: 100%;
+}
+
+.editable-text {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin: 0;
+}
+
+.hero-names-container {
+  position: absolute;
+  top: 10vw; /* Using vw instead of px ensures it stays perfectly placed on mobile screens */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.name-primary {
+  font-family: 'Sunroll', serif;
+  font-size: 5vw;
+  font-weight: normal;
+  letter-spacing: 4px;
+}
+
+.name-connector {
+  font-family: 'Whitley Pattrycia', cursive;
+  font-size: 4vw;
+  font-weight: normal;
+  margin: -1.5vw 0; /* Pulls the script closer to the names */
+}
+
+/* Invite Section Text */
+.invite-text-container {
+  position: absolute;
+  top: 35%; /* Shifted up to accommodate larger text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #834701;
+  text-align: center;
+}
+
+.invite-text-container p, .invite-text-container h2 {
+  margin: 0;
+  text-shadow: none; /* No shadow on the parchment */
+}
+
+.invite-welcome {
+  font-family: 'Sunroll', serif;
+  font-size: 2vw;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5vw !important;
+}
+
+.invite-name {
+  font-family: 'Sunroll', serif;
+  font-size: 5vw;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+.invite-and {
+  font-family: 'Sunroll', serif;
+  font-size: 2.5vw;
+  margin: 0.5vw 0 !important;
+}
+
+.invite-message {
+  font-family: 'ShunsineDemo', serif;
+  font-size: 2vw;
+  font-weight: 500;
+  line-height: 1.8;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  color: #834701;
+}
+
+.invite-month {
+  font-family: 'Shanln', serif;
+  font-size: 5vw;
+  letter-spacing: 0.1em;
+  margin-top: 1.5vw;
+  margin-bottom: 0.5vw !important;
+}
+
+.invite-date {
+  font-family: 'Shanln', serif;
+  font-size: 5.5vw; /* Increased from 3.5vw */
+  letter-spacing: 0.15em;
+  margin-bottom: 1vw !important;
+}
+
+.invite-time {
+  font-family: 'Shanln', serif; 
+  font-size: 3.5vw; 
+  letter-spacing: 0.1em;
+}
+
+.invite-location {
+  margin-top: 1.5vw;
+  font-family: 'Shanln', serif;
+  font-size: 3.2vw;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+
+
+/* Map Section Styles */
+.map-iframe-container {
+  position: absolute;
+  top: 26%; /* Pushed down to start below the top roll */
+  left: 24%; /* Pushed slightly right to fit inside the torn edge */
+  width: 52%; /* Slightly narrowed */
+  height: 24%; /* Increased height to fill the scroll */
+  z-index: 6;
+  border-radius: 0.6vw;
+  overflow: hidden;
+  mix-blend-mode: multiply; /* Blends the map into the parchment texture! */
+  opacity: 0.85; /* Softens the map to look printed */
+  filter: contrast(1.1); /* Adds a bit of punch back after blending */
+}
+
+/* Story Text Section Overlay on Canvas 1 */
+.story-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  max-height: 80vh; /* Ensures it never overflows the screen height */
+  overflow-y: auto; /* Makes it scrollable if the text is super long */
+  text-align: center;
+  z-index: 5;
+  color: #834701;
+  font-family: 'Shanln', serif;
+  font-size: 3.5vw;
+  line-height: 1.6;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar to match the theme */
+.story-text-container::-webkit-scrollbar {
+  width: 0.8vw;
+}
+.story-text-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.story-text-container::-webkit-scrollbar-thumb {
+  background: rgba(131, 71, 1, 0.4);
+  border-radius: 1vw;
+}
+.story-text-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(131, 71, 1, 0.8);
+}
+
+
+
+
