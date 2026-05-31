@@ -34,7 +34,7 @@ const SitePreloader = ({ duration = 0.8 }) => {
   if (!loading) return null;
 
   return (
-    <PreloaderContainer $fade={fade} $animationDuration={Math.min(duration, 1.2) + 1.5}>
+    <PreloaderContainer $fade={fade} $animationDuration={Math.min(duration, 1.3) + 1.5}>
       <picture>
         <source media="(max-width: 768px)" srcSet="/preloader_mobile.webp" />
         <img src="/preloader_desktop.webp" alt="Loading..." />

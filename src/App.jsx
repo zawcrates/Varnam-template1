@@ -69,7 +69,7 @@ function App({
         {/* We moved bgRef to the wrapper so the text also parallaxes with the sky! */}
         <div className="background-wrapper" ref={bgRef}>
           <img 
-            src="/background.png" 
+            src="/background.webp" 
             alt="Background" 
             className="hero-background" 
           />
@@ -84,14 +84,14 @@ function App({
           {/* We wrap individual images in a relative container so absolute text aligns perfectly to them */}
           <div className="image-overlay-container">
             <img 
-              src="/foreground.png" 
+              src="/foreground.webp" 
               alt="Foreground" 
               className="hero-foreground" 
             />
           </div>
           
           <div className="image-overlay-container">
-            <img src="/invite.png" alt="Invite" className="invite-image" />
+            <img src="/invite.webp" alt="Invite" className="invite-image" />
             <div className="invite-text-container">
               <p className="invite-welcome">{inviteData.welcomeTop}</p>
               
@@ -116,14 +116,14 @@ function App({
           </div>
           
           <div className="image-overlay-container">
-            <img src="/canvas 1.png" alt="Canvas 1" className="canvas-image" />
+            <img src="/canvas 1.webp" alt="Canvas 1" className="canvas-image" />
             <div className="story-text-container">
               <p>{inviteData.storyText}</p>
             </div>
           </div>
           
           <div className="image-overlay-container">
-            <img src="/canvas 3.png" alt="Canvas 3" className="canvas-image" />
+            <img src="/canvas 3.webp" alt="Canvas 3" className="canvas-image" />
             
             <div className="map-iframe-container">
               <iframe 
