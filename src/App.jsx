@@ -59,7 +59,7 @@ function App({
   }, []);
 
   return (
-    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true, smoothTouch: true, syncTouch: true, touchMultiplier: 2 }}>
+    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
       <div className="app-container">
         
         {/* We moved bgRef to the wrapper so the text also parallaxes with the sky! */}
