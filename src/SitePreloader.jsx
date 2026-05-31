@@ -48,7 +48,8 @@ const PreloaderContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Fallback */
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
   z-index: 9999;
   background-color: #000;
   display: flex;
@@ -57,11 +58,20 @@ const PreloaderContainer = styled.div`
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
   opacity: ${props => (props.$fade ? 0 : 1)};
   pointer-events: ${props => (props.$fade ? 'none' : 'auto')};
+  user-select: none;
   
+  picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center; /* Keeps the focus centered on all aspect ratios */
+    pointer-events: none; /* Prevents long-press save image on mobile */
     animation: preloaderZoomOut ${props => props.$animationDuration}s ease-out forwards;
   }
 
