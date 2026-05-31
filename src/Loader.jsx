@@ -1,9 +1,41 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Loader = ({ audioSrc }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
+
+  useEffect(() => {
+    let hasPlayed = false;
+
+    const attemptPlay = () => {
+      if (!audioRef.current || hasPlayed) return;
+      
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+        hasPlayed = true;
+        cleanupListeners();
+      }).catch(e => {
+        console.log("Autoplay waiting for user interaction...");
+      });
+    };
+
+    const cleanupListeners = () => {
+      window.removeEventListener('click', attemptPlay);
+      window.removeEventListener('touchstart', attemptPlay);
+      window.removeEventListener('scroll', attemptPlay);
+    };
+
+    // Try immediately (works if returning visitor)
+    attemptPlay();
+
+    // If blocked, wait for ANY interaction
+    window.addEventListener('click', attemptPlay);
+    window.addEventListener('touchstart', attemptPlay);
+    window.addEventListener('scroll', attemptPlay);
+
+    return cleanupListeners;
+  }, []);
 
   const toggleMusic = () => {
     if (isPlaying) {
@@ -16,7 +48,7 @@ const Loader = ({ audioSrc }) => {
 
   return (
     <StyledWrapper onClick={toggleMusic} $isPlaying={isPlaying}>
-      <audio ref={audioRef} src={audioSrc} loop style={{ display: 'none' }} />
+      <audio ref={audioRef} src={audioSrc} autoPlay loop style={{ display: 'none' }} />
       
       <div className="loader">
         <span className="bar" />

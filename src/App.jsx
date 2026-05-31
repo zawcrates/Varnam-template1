@@ -10,9 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 function App({ 
   // When you add this template to your website, you can pass these values as props!
   inviteData = {
-    groomName: "Joeseph Vijay",
+    groomName: "Virat Kohli",
     connector: "Weds",
-    brideName: "Trisha Krishnan",
+    brideName: "Anushka Sharma",
     
     // New Invite Section Texts
     welcomeTop: "TOGETHER WITH THEIR FAMILIES",
