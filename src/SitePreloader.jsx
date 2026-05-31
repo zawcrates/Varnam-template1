@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const SitePreloader = ({ duration = 0.7 }) => {
+const SitePreloader = ({ duration = 0.8 }) => {
   const [loading, setLoading] = useState(true);
   const [fade, setFade] = useState(false);
 
@@ -10,7 +10,7 @@ const SitePreloader = ({ duration = 0.7 }) => {
     document.body.style.overflow = 'hidden';
 
     // Ensure duration doesn't exceed the max of 1.2 seconds
-    const safeDuration = Math.min(duration, 1.2);
+    const safeDuration = Math.min(duration, 1.3);
     const fadeWaitTime = safeDuration * 1000;
 
     // Start fade out
