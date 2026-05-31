@@ -23,7 +23,7 @@ const WhatsappButton = ({ whatsappNumber }) => {
 
 const StyledWrapper = styled.div`
   position: absolute;
-  top: 69.5%; /* Position below the map inside canvas 3 */
+  top: 67%; /* Position below the map inside canvas 3 */
   left: 50%;
   z-index: 100;
 

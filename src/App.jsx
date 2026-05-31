@@ -43,8 +43,7 @@ function App({
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(bgRef.current, {
-        // Move the background down exactly 80% of its own height as we scroll past it
-        y: () => bgRef.current.offsetHeight * 0.3,
+        yPercent: 35, // Use yPercent for more robust mobile scaling
         ease: 'none',
         scrollTrigger: {
           trigger: '.background-wrapper',
@@ -60,7 +59,7 @@ function App({
   }, []);
 
   return (
-    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
+    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true, smoothTouch: true, syncTouch: true, touchMultiplier: 2 }}>
       <div className="app-container">
         
         {/* We moved bgRef to the wrapper so the text also parallaxes with the sky! */}
