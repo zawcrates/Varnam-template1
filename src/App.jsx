@@ -4,12 +4,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Loader from './Loader';
 import WhatsappButton from './WhatsappButton';
+import SitePreloader from './SitePreloader';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App({ 
   // When you add this template to your website, you can pass these values as props!
   inviteData = {
+    showPreloader: true, // Toggle this to false in the dashboard to remove the preloader
+    preloaderTime: 0.7, // Adjustable preloader time in seconds (max 1.2s). 
     groomName: "Virat Kohli",
     connector: "Weds",
     brideName: "Anushka Sharma",
@@ -60,6 +63,7 @@ function App({
 
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
+      {inviteData.showPreloader !== false && <SitePreloader duration={inviteData.preloaderTime || 0.7} />}
       <div className="app-container">
         
         {/* We moved bgRef to the wrapper so the text also parallaxes with the sky! */}
