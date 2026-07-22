@@ -69,10 +69,10 @@ const StyledWrapper = styled.div`
 
   .toggle .button {
     transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(60, 60, 60, 0.6), inset 0 3px 4px -1px rgba(131, 71, 1, 0.8), inset 0 0 5px 1px rgba(131, 71, 1, 0.8), inset 0 20px 30px 0 rgba(131, 71, 1, 0.5);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(60, 60, 60, 0.5), inset 0 3px 4px -1px rgba(255, 255, 255, 0.4), inset 0 0 5px 1px rgba(255, 255, 255, 0.3), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
     border-radius: 68.8px;
     position: absolute;
-    background: #834701; /* Themed dark brown */
+    background: #25D366; /* Authentic WhatsApp Green */
     margin-left: -34.4px;
     margin-top: -34.4px;
     display: block;
@@ -99,8 +99,8 @@ const StyledWrapper = styled.div`
     width: 38px;
     height: 38px;
     object-fit: contain;
-    /* Optional: drop shadow to make the icon pop */
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    /* Inverts the black icon to white so it looks official on green background */
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
   }
 
   .toggle:active .button {
