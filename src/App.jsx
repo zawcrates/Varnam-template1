@@ -314,6 +314,10 @@ function App({
           </div>
 
           <div className="image-overlay-container">
+            <img src="/end.png" alt="End" className="canvas-image" />
+          </div>
+
+          <div className="image-overlay-container">
             <img src="/Banner.png" alt="Banner" className="canvas-image" />
           </div>
 
