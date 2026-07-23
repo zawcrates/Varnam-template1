@@ -611,6 +611,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  .foreground-wrapper {
+    transform: translateY(40px);
+  }
+
+  .hero-names-container {
+    transform: translate(-50%, 20px);
+  }
+
   .events-section-container {
     width: 90%;
     height: 86%;
