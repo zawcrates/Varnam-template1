@@ -118,17 +118,15 @@ function App({
   };
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-
     const ctx = gsap.context(() => {
       gsap.to(bgRef.current, {
-        yPercent: isMobile ? 65 : 35, // Increased parallax depth shift on mobile
+        yPercent: 35, // Use yPercent for more robust mobile scaling
         ease: 'none',
         scrollTrigger: {
           trigger: '.background-wrapper',
           start: 'top top',
           end: 'bottom top',
-          scrub: isMobile ? 1.2 : true, // Slower/smoothed scrub speed for visible mobile parallax
+          scrub: true,
           invalidateOnRefresh: true
         },
       });
@@ -137,17 +135,8 @@ function App({
     return () => ctx.revert();
   }, []);
 
-  const isMobileScreen = typeof window !== 'undefined' && window.innerWidth <= 768;
-
-  const lenisOptions = {
-    lerp: isMobileScreen ? 0.04 : 0.08, // Lower lerp slows down scroll rate for mobile
-    smoothWheel: true,
-    smoothTouch: true,
-    touchMultiplier: isMobileScreen ? 0.7 : 1.5, // Reduces rapid touch swipe speed on mobile
-  };
-
   return (
-    <ReactLenis root options={lenisOptions}>
+    <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
       <div className="app-container">
         
         {/* We moved bgRef to the wrapper so the text also parallaxes with the sky! */}
