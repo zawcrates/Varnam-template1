@@ -3,7 +3,6 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Loader from './Loader';
-import WhatsappButton from './WhatsappButton';
 import SitePreloader from './SitePreloader';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -142,7 +141,7 @@ function App({
         {/* We moved bgRef to the wrapper so the text also parallaxes with the sky! */}
         <div className="background-wrapper" ref={bgRef}>
           <img 
-            src="/background.webp" 
+            src="/sunset.png" 
             alt="Background" 
             className="hero-background" 
           />
@@ -157,14 +156,10 @@ function App({
           {/* We wrap individual images in a relative container so absolute text aligns perfectly to them */}
           <div className="image-overlay-container">
             <img 
-              src="/foreground.webp" 
+              src="/stage.png" 
               alt="Foreground" 
               className="hero-foreground" 
             />
-          </div>
-          
-          <div className="image-overlay-container">
-            <img src="/invite.webp" alt="Invite" className="invite-image" />
             <div className="invite-text-container">
               <p className="invite-welcome">{inviteData.welcomeTop}</p>
               
@@ -181,14 +176,14 @@ function App({
                 {/* DATE ROW */}
                 <div className="info-row">
                   <div className="info-icon-container">
-                    <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="#834701" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="3" y="4" width="18" height="17" rx="2" />
                       <line x1="16" y1="2" x2="16" y2="6" />
                       <line x1="8" y1="2" x2="8" y2="6" />
                       <line x1="3" y1="10" x2="21" y2="10" />
-                      <circle cx="8" cy="14" r="1" fill="#834701" />
-                      <circle cx="12" cy="14" r="1" fill="#834701" />
-                      <circle cx="16" cy="14" r="1" fill="#834701" />
+                      <circle cx="8" cy="14" r="1" fill="#000000" />
+                      <circle cx="12" cy="14" r="1" fill="#000000" />
+                      <circle cx="16" cy="14" r="1" fill="#000000" />
                     </svg>
                   </div>
                   <div className="info-vertical-line"></div>
@@ -200,16 +195,16 @@ function App({
 
                 <div className="info-row-divider">
                   <svg viewBox="0 0 200 12" width="100%" height="12">
-                    <line x1="0" y1="6" x2="88" y2="6" stroke="#834701" strokeWidth="0.6" strokeDasharray="2,2" />
-                    <polygon points="100,2 103,6 100,10 97,6" fill="#834701" />
-                    <line x1="112" y1="6" x2="200" y2="6" stroke="#834701" strokeWidth="0.6" strokeDasharray="2,2" />
+                    <line x1="0" y1="6" x2="88" y2="6" stroke="#000000" strokeWidth="0.6" strokeDasharray="2,2" />
+                    <polygon points="100,2 103,6 100,10 97,6" fill="#000000" />
+                    <line x1="112" y1="6" x2="200" y2="6" stroke="#000000" strokeWidth="0.6" strokeDasharray="2,2" />
                   </svg>
                 </div>
 
                 {/* TIME ROW */}
                 <div className="info-row">
                   <div className="info-icon-container">
-                    <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="#834701" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="9" />
                       <polyline points="12 7 12 12 15 14.5" />
                     </svg>
@@ -223,16 +218,16 @@ function App({
 
                 <div className="info-row-divider">
                   <svg viewBox="0 0 200 12" width="100%" height="12">
-                    <line x1="0" y1="6" x2="88" y2="6" stroke="#834701" strokeWidth="0.6" strokeDasharray="2,2" />
-                    <polygon points="100,2 103,6 100,10 97,6" fill="#834701" />
-                    <line x1="112" y1="6" x2="200" y2="6" stroke="#834701" strokeWidth="0.6" strokeDasharray="2,2" />
+                    <line x1="0" y1="6" x2="88" y2="6" stroke="#000000" strokeWidth="0.6" strokeDasharray="2,2" />
+                    <polygon points="100,2 103,6 100,10 97,6" fill="#000000" />
+                    <line x1="112" y1="6" x2="200" y2="6" stroke="#000000" strokeWidth="0.6" strokeDasharray="2,2" />
                   </svg>
                 </div>
 
                 {/* VENUE ROW */}
                 <div className="info-row">
                   <div className="info-icon-container">
-                    <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="#834701" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
@@ -253,9 +248,11 @@ function App({
           </div>
           
           <div className="image-overlay-container">
-            <img src="/canvas 1.webp" alt="Canvas 1" className="canvas-image" />
+            <img src="/Event.png" alt="Event" className="canvas-image" />
             <div className="events-section-container">
               <div className="events-carousel-wrapper">
+                <img src="/Card.png" alt="Card Background" className="carousel-bg-frame" />
+                
                 <button className="carousel-arrow left" onClick={scrollLeft} aria-label="Previous event">
                   <svg viewBox="0 0 24 24" width="24" height="24">
                     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#834701" />
@@ -265,7 +262,6 @@ function App({
                 <div className="events-carousel-track" ref={carouselRef} onScroll={handleScroll}>
                   {(tripledEvents || []).map((event) => (
                     <div key={event.uniqueId} className="event-card-frame">
-                      <img src="/card.png" alt={event.name} className="event-card-bg" />
                       <div className="event-card-content">
                         <div className="event-card-header-zone">
                           <h3 className="event-card-name">{event.name}</h3>
