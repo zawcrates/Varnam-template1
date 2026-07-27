@@ -189,10 +189,10 @@ body {
 /* Mobile screen (<= 480px) */
 @media (max-width: 480px) {
   .foreground-wrapper {
-    transform: translateY(400px) !important;
+    transform: translateY(250px) !important;
   }
   .invite-text-container {
-    top: calc(clamp(50px, 8vw, 95px) + 400px) !important;
+    top: calc(clamp(50px, 8vw, 95px) + 300px) !important;
   }
 }
 
