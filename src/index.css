@@ -896,10 +896,10 @@ body {
   }
 
   .map-iframe-container {
-    top: 22%;
+    top: 35.8%;
     left: 11.5%;
     width: 77%;
-    height: 46%;
-    border-radius: clamp(12px, 3.5vw, 20px);
+    height: 23%;
+    border-radius: clamp(8px, 2vw, 16px);
   }
 }
