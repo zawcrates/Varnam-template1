@@ -251,8 +251,6 @@ function App({
             <img src="/Event.png" alt="Event" className="canvas-image" />
             <div className="events-section-container">
               <div className="events-carousel-wrapper">
-                <img src="/Card.png" alt="Card Background" className="carousel-bg-frame" />
-                
                 <button className="carousel-arrow left" onClick={scrollLeft} aria-label="Previous event">
                   <svg viewBox="0 0 24 24" width="24" height="24">
                     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#834701" />
@@ -262,6 +260,7 @@ function App({
                 <div className="events-carousel-track" ref={carouselRef} onScroll={handleScroll}>
                   {(tripledEvents || []).map((event) => (
                     <div key={event.uniqueId} className="event-card-frame">
+                      <img src="/Card.png" alt="Card Background" className="event-card-bg" />
                       <div className="event-card-content">
                         <div className="event-card-header-zone">
                           <h3 className="event-card-name">{event.name}</h3>

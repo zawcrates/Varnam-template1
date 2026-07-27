@@ -329,16 +329,15 @@ body {
 /* Map Section Styles */
 .map-iframe-container {
   position: absolute;
-  top: 11%;
+  top: 35.8%;
   left: 11.5%;
   width: 77%;
-  height: 72%;
+  height: 23%;
   z-index: 6;
   border-radius: clamp(16px, 2.5vw, 32px);
   overflow: hidden;
-  mix-blend-mode: multiply; /* Blends the map into the wooden texture */
-  opacity: 0.88; /* Softens the map to look printed */
-  filter: contrast(1.1); /* Adds contrast after blending */
+  opacity: 0.8;
+  filter: contrast(1.05);
 }
 
 /* --- EVENTS SECTION & INFINITE CAROUSEL --- */
@@ -897,10 +896,10 @@ body {
   }
 
   .map-iframe-container {
-    top: 11%;
+    top: 22%;
     left: 11.5%;
     width: 77%;
-    height: 72%;
+    height: 46%;
     border-radius: clamp(12px, 3.5vw, 20px);
   }
 }
